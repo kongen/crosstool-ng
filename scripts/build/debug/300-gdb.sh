@@ -178,6 +178,7 @@ do_debug_gdb_build() {
         # version of expat and will attempt to link that, despite the -static flag.
         # The link will fail, and configure will abort with "expat missing or unusable"
         # message.
+        native_extra_config+=("--with-libexpat-prefix=${CT_SYSROOT_DIR}/usr")
 
         CT_DoLog EXTRA "Configuring native gdb"
 
